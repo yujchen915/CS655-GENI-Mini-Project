@@ -53,7 +53,7 @@ def changeDelay():
 
     print("painting\n")
     fig = plt.figure()
-    plt.ylim(0, 1)
+    plt.ylim(0, 5)
     plt.plot(delays, seconds_delay, 'ro')
     plt.savefig("withCache_timeCost_vs_delay.png")
 
@@ -92,7 +92,7 @@ def changePacketLoss():
     os.system("sudo tc qdisc del dev eth0 root netem")
 
     fig = plt.figure()
-    plt.ylim(0, 1)
+    plt.ylim(0, 5)
     plt.plot(loses, seconds_loss, 'ro')
     plt.savefig("withCache_timeCost_vs_loss.png")
 
@@ -134,7 +134,7 @@ def changeBandwidth():
 
     fig = plt.figure()
     plt.plot(bandwidths, seconds_band, 'ro')
-    plt.ylim(0, 1)
+    plt.ylim(0, 5)
     plt.savefig("withCache_timeCost_vs_bandwidth.png")
 
 
