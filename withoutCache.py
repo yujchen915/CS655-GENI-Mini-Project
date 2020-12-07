@@ -1,20 +1,10 @@
 import requests
 import matplotlib
-import time
 import os
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from datetime import datetime
 
-#transfer datetime object into sum of seconds, which will be used in plotting
-def getSecond(time):
-    ftr = [3600, 60, 1]
-    return sum([a * b for a, b in zip(ftr, map(float, time.strftime("%H:%M:%S").split(':')))])
-
-proxies = {
-        "http": "http://10.10.1.2:8080",
-        "https": "http://10.10.1.2:8080",
-    }
 
 def changeDelay():
     delays = [0, 100, 200, 300, 400, 500]
@@ -38,7 +28,7 @@ def changeDelay():
         start = datetime.now()
         print(start)
         for k in range(50):
-            req = requests.get("http://www.google.com",proxies=proxies)
+            req = requests.get("http://www.google.com")
         print("Requests completed.")
         print("End time:")
         end = datetime.now()
@@ -51,12 +41,10 @@ def changeDelay():
         print("\n")
     os.system("sudo tc qdisc del dev eth0 root netem")
 
-    print("painting\n")
     fig = plt.figure()
-    plt.ylim(0, 1)
     plt.plot(delays, seconds_delay, 'ro')
-    plt.savefig("withCache_timeCost_vs_delay.png")
-
+    #plt.ylim(0, 100)
+    plt.savefig("withoutCache_time_vs_delay.png")
 
 def changePacketLoss():
     loses = [0, 0.02, 0.04, 0.06, 0.08, 0.1]
@@ -78,7 +66,7 @@ def changePacketLoss():
         start = datetime.now()
         print(start)
         for k in range(50):
-            req = requests.get("http://www.google.com",proxies=proxies)
+            req = requests.get("http://www.google.com")
         print("Requests completed.")
         print("End time:")
         end = datetime.now()
@@ -92,10 +80,8 @@ def changePacketLoss():
     os.system("sudo tc qdisc del dev eth0 root netem")
 
     fig = plt.figure()
-    plt.ylim(0, 1)
     plt.plot(loses, seconds_loss, 'ro')
-    plt.savefig("withCache_timeCost_vs_loss.png")
-
+    plt.savefig("withoutCache_time_vs_loss.png")
 
 def changeBandwidth():
     bandwidths = [100,150,200,250,300]
@@ -118,7 +104,7 @@ def changeBandwidth():
         start = datetime.now()
         print(start)
         for k in range(50):
-            req = requests.get("http://www.google.com",proxies=proxies)
+            req = requests.get("http://www.google.com")
         print("Requests completed.")
         print("End time:")
         end = datetime.now()
@@ -134,9 +120,7 @@ def changeBandwidth():
 
     fig = plt.figure()
     plt.plot(bandwidths, seconds_band, 'ro')
-    plt.ylim(0, 1)
-    plt.savefig("withCache_timeCost_vs_bandwidth.png")
-
+    plt.savefig("withoutCache_time_vs_bandwidth.png")
 
 
 if __name__ == '__main__':
