@@ -4,8 +4,6 @@ import os
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from datetime import datetime
-
-
 def changeDelay():
     delays = [0, 100, 200, 300, 400, 500]
     seconds_delay = []
