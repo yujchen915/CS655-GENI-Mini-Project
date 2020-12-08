@@ -1,0 +1,48 @@
+<rspec xmlns="http://www.geni.net/resources/rspec/3" xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" xmlns:tour="http://www.protogeni.net/resources/rspec/ext/apt-tour/1" xmlns:jacks="http://www.protogeni.net/resources/rspec/ext/jacks/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.geni.net/resources/rspec/3    http://www.geni.net/resources/rspec/3/request.xsd" type="request">
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="client" component_manager_id="urn:publicid:IDN+instageni.clemson.edu+authority+cm" component_id="urn:publicid:IDN+instageni.clemson.edu+node+pc1" sliver_id="urn:publicid:IDN+instageni.clemson.edu+sliver+48525" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26411" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26411" username="zilin"/>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26411" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26411" username="yicli512"/>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26411" username="yujchen"/>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26411" username="ymy9724"/>
+      <emulab:console server="pc1.instageni.clemson.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-0" component_id="urn:publicid:IDN+instageni.clemson.edu+interface+pc1:lo0" sliver_id="urn:publicid:IDN+instageni.clemson.edu+sliver+48528" mac_address="02986e007f4c">
+      <ip address="10.10.1.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm1-4" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="client.project-WebCaching.ch-geni-net.instageni.clemson.edu"/>
+  </node>
+  <node xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" client_id="cache" component_manager_id="urn:publicid:IDN+instageni.clemson.edu+authority+cm" component_id="urn:publicid:IDN+instageni.clemson.edu+node+pc1" sliver_id="urn:publicid:IDN+instageni.clemson.edu+sliver+48524" exclusive="false">
+    <icon xmlns="http://www.protogeni.net/resources/rspec/ext/jacks/1" url="https://portal.geni.net/images/VM-noTxt-centered.svg"/>
+    <sliver_type name="default-vm"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26410" username="matta"/>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26410" username="zilin"/>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26410" username="tolik"/>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26410" username="yicli512"/>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26410" username="yujchen"/>
+      <login authentication="ssh-keys" hostname="pc1.instageni.clemson.edu" port="26410" username="ymy9724"/>
+      <emulab:console server="pc1.instageni.clemson.edu"/>
+      <emulab:imageable available="true"/>
+    </services>
+    <interface client_id="interface-1" component_id="urn:publicid:IDN+instageni.clemson.edu+interface+pc1:lo0" sliver_id="urn:publicid:IDN+instageni.clemson.edu+sliver+48529" mac_address="026af560c40a">
+      <ip address="10.10.1.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <emulab:vnode name="pcvm1-2" hardware_type="pcvm" disk_image="emulab-ops/UBUNTU18-64-STD:0"/>
+    <host name="cache.project-WebCaching.ch-geni-net.instageni.clemson.edu"/>
+  </node>
+  <link client_id="link-0" sliver_id="urn:publicid:IDN+instageni.clemson.edu+sliver+48527">
+    <interface_ref client_id="interface-0" component_id="urn:publicid:IDN+instageni.clemson.edu+interface+pc1:lo0" sliver_id="urn:publicid:IDN+instageni.clemson.edu+sliver+48528"/>
+    <interface_ref client_id="interface-1" component_id="urn:publicid:IDN+instageni.clemson.edu+interface+pc1:lo0" sliver_id="urn:publicid:IDN+instageni.clemson.edu+sliver+48529"/>
+    <component_manager name="urn:publicid:IDN+instageni.clemson.edu+authority+cm"/>
+  </link>
+  <rs:site_info xmlns:rs="http://www.protogeni.net/resources/rspec/ext/site-info/1">
+    <rs:location country="" latitude="34.678333" longitude="-82.839167"/>
+  </rs:site_info>
+</rspec>
