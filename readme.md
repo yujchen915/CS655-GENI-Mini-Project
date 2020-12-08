@@ -8,7 +8,6 @@ Use the rspec in the repository.
 
 Step 2 -- some basic configurations on client and cache nodes 
 -----------------------------
-***
 
 On client node, run: 
 
