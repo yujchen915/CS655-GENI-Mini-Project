@@ -30,8 +30,8 @@ On cache node, run:
 Change the two attributes of records.config to the following, to set up
 a forward proxy. The default port is 8080. 
 
-    CONFIG proxy.config.url\_remap.remap\_required INT 0 
-    CONFIG proxy.config.reverse\_proxy.enabled INT 0
+    CONFIG proxy.config.url_remap.remap_required INT 0
+    CONFIG proxy.config.reverse_proxy.enabled INT 0
 
 Step 3 -- run experiment without cache 
 ---------------------------
@@ -46,8 +46,8 @@ Step 4 -- run experiment with cache
 
 On cache node, run the following command to start the cache server. 
 
-    cd /usr/bin 
-    sudo ./traffic\_server start
+    cd /usr/bin
+    sudo ./traffic_server start
 
 On client node, download _withCache.py_ and run it. 
 
