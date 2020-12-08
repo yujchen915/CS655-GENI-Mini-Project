@@ -1,10 +1,8 @@
 README
 =============================
-***
 
 Step 1 -- reserve rspec from Geni 
 -----------------------------
-***
 
 Use the rspec in the repository.
 
@@ -38,7 +36,6 @@ a forward proxy. The default port is 8080.
 
 Step 3 -- run experiment without cache 
 ---------------------------
-***
 
 On client node, download _withoutCache.py_ and run it. 
 
@@ -47,7 +44,6 @@ On client node, download _withoutCache.py_ and run it.
 
 Step 4 -- run experiment with cache 
 ---------------------------
-***
 
 On cache node, run the following command to start the cache server. 
 
